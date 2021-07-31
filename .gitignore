@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+core/blog/__init__.py
+.gitignore
+core/blog/migrations/__init__.py
