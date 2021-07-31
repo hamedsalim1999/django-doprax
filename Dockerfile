@@ -17,4 +17,6 @@ RUN pip install -r requirements.txt
 # RUN python core/manage.py makemigrations
 # RUN python core/manage.py migrate
 # Run command for start app with gunicorn
+# EXPOSEport
+EXPOSE 8000
 CMD ["gunicorn", "--chdir", "resume", "--bind", ":8000", "core.wsgi:application"]
