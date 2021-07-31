@@ -19,4 +19,4 @@ RUN pip install -r requirements.txt
 # Run command for start app with gunicorn
 # EXPOSEport
 EXPOSE 5000
-CMD ["gunicorn","--bind", "0.0.0.0:8000", "core.wsgi:application"]
+CMD ["gunicorn","--bind", "0.0.0.0:5000", "core.wsgi:application"]
