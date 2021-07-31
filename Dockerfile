@@ -1,13 +1,13 @@
 # base image
 FROM python:3.10.0b4-alpine3.14
 # Set working directory
-RUN mkdir /resume
+RUN mkdir /app
 # set working directory
-WORKDIR /resume
+WORKDIR /app
 # coppy commands 
-COPY . /resume
+COPY . /app
 # Installing requirements
-ADD requirements.txt /resume
+ADD requirements.txt /app
 # run commnad  for install 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
@@ -19,4 +19,4 @@ RUN pip install -r requirements.txt
 # Run command for start app with gunicorn
 # EXPOSEport
 EXPOSE 5000
-CMD ["gunicorn", "--chdir", "resume", "--bind", ":8000", "core.wsgi:application"]
+CMD ["gunicorn", "--chdir", "app", "--bind", ":8000", "core.wsgi:application"]
